@@ -67,7 +67,6 @@ test/cpp_extensions/open_registration_extension/install
 test/cpp_extensions/libtorch_agnostic_extension/install
 test/kernel.errors.txt
 third_party/build/
-third_party/nccl/
 tools/coverage_plugins_package/pip-wheel-metadata/
 tools/shared/_utils_internal.py
 tools/fast_nvcc/wrap_nvcc.sh
