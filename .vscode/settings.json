@@ -2,7 +2,9 @@
     "cmake.configureArgs": [
         "-DCMAKE_BUILD_TYPE=Debug",
         "-DCMAKE_CUDA_HOST_COMPILER=clang++",
-        "-DCMAKE_INSTALL_PREFIX=/root/pytorch/dist"
+        "-DCMAKE_INSTALL_PREFIX=/root/pytorch/dist",
+        "-DBUILD_PYTHON=OFF",
+        "-DBUILD_LIBTORCH_CPU_WITH_DEBUG=ON"
     ],
     "cmake.configureOnEdit": false,
     "cmake.configureOnOpen": false,
