@@ -479,6 +479,12 @@ static Tensor& _exec_fft(Tensor& out, const Tensor& self, IntArrayRef out_sizes,
   const auto value_type = c10::toRealValueType(input.scalar_type());
   out.resize_(batched_out_sizes, MemoryFormat::Contiguous);
 
+  // fix mkl issue
+  // https://github.com/pytorch/pytorch/issues/154477
+  if (signal_size[0] > 1 && input.strides()[0] == 0) {
+    input = input.clone(MemoryFormat::Contiguous);
+  }
+
   auto descriptor = _plan_mkl_fft(
       input.strides(), out.strides(), signal_size, input.is_complex(),
       out.is_complex(), normalization, forward, value_type);
