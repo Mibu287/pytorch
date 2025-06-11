@@ -132,3 +132,6 @@
 [submodule "third_party/nccl"]
 	path = third_party/nccl
 	url = https://github.com/NVIDIA/nccl
+[submodule "third_party/fbgemm"]
+	path = third_party/fbgemm
+	url = https://github.com/pytorch/fbgemm
